@@ -26,7 +26,7 @@
 
 #define NUMBER_OF_TESTS 11
 
-int v1a = 42;
+int v1a = 41;
 
 int v2a = 2;
 int v2b = 4;
