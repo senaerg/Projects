@@ -28,7 +28,7 @@ int main(int argc, const char **argv)
   printf("Starting LED test");
 #ifdef BSIM
   // BSIM does not run very many cycles per second
-  int blinkinterval = 1000;
+  int blinkinterval = 10;
 #else
   int blinkinterval = 100000000; // 100MHz cycles
 #endif
