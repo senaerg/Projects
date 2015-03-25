@@ -1,0 +1,222 @@
+{
+    "dutname": "mkBsimTop", 
+    "globaldecls": [
+        {
+            "name": "LedControllerCmd", 
+            "params": [], 
+            "tdtype": {
+                "elements": [
+                    {
+                        "name": "leds", 
+                        "type": {
+                            "name": "Bit", 
+                            "params": [
+                                {
+                                    "name": "8", 
+                                    "params": [], 
+                                    "type": "Type"
+                                }
+                            ], 
+                            "type": "Type"
+                        }
+                    }, 
+                    {
+                        "name": "duration", 
+                        "type": {
+                            "name": "Bit", 
+                            "params": [
+                                {
+                                    "name": "32", 
+                                    "params": [], 
+                                    "type": "Type"
+                                }
+                            ], 
+                            "type": "Type"
+                        }
+                    }
+                ], 
+                "name": "LedControllerCmd", 
+                "type": "Struct"
+            }, 
+            "type": "TypeDef"
+        }, 
+        {
+            "type": "Interface"
+        }, 
+        {
+            "type": "Interface"
+        }, 
+        {
+            "type": "Module"
+        }, 
+        {
+            "name": "PinType", 
+            "params": [], 
+            "tdtype": {
+                "name": "`PinType", 
+                "params": [], 
+                "type": "Type"
+            }, 
+            "type": "TypeDef"
+        }, 
+        {
+            "name": "IfcNames", 
+            "params": [], 
+            "tdtype": {
+                "elements": [
+                    "LedControllerRequestS2H"
+                ], 
+                "name": "IfcNames", 
+                "type": "Enum"
+            }, 
+            "type": "TypeDef"
+        }, 
+        {
+            "type": "Module"
+        }, 
+        {
+            "type": "Interface"
+        }
+    ], 
+    "globalimports": [
+        "FIFO", 
+        "GetPut", 
+        "Leds", 
+        "Vector", 
+        "Portal", 
+        "CtrlMux", 
+        "HostInterface", 
+        "MemPortal", 
+        "Connectable", 
+        "MemreadEngine", 
+        "MemwriteEngine", 
+        "MemTypes", 
+        "LedController", 
+        "LedControllerRequest"
+    ], 
+    "globalvars": {
+        "DisplayInd": {
+            "type": "Interface"
+        }, 
+        "IfcNames": {
+            "name": "IfcNames", 
+            "params": [], 
+            "tdtype": {
+                "elements": [
+                    "LedControllerRequestS2H"
+                ], 
+                "name": "IfcNames", 
+                "type": "Enum"
+            }, 
+            "type": "TypeDef"
+        }, 
+        "LedController": {
+            "type": "Interface"
+        }, 
+        "LedControllerCmd": {
+            "name": "LedControllerCmd", 
+            "params": [], 
+            "tdtype": {
+                "elements": [
+                    {
+                        "name": "leds", 
+                        "type": {
+                            "name": "Bit", 
+                            "params": [
+                                {
+                                    "name": "8", 
+                                    "params": [], 
+                                    "type": "Type"
+                                }
+                            ], 
+                            "type": "Type"
+                        }
+                    }, 
+                    {
+                        "name": "duration", 
+                        "type": {
+                            "name": "Bit", 
+                            "params": [
+                                {
+                                    "name": "32", 
+                                    "params": [], 
+                                    "type": "Type"
+                                }
+                            ], 
+                            "type": "Type"
+                        }
+                    }
+                ], 
+                "name": "LedControllerCmd", 
+                "type": "Struct"
+            }, 
+            "type": "TypeDef"
+        }, 
+        "LedControllerRequest": {
+            "type": "Interface"
+        }, 
+        "PinType": {
+            "name": "PinType", 
+            "params": [], 
+            "tdtype": {
+                "name": "`PinType", 
+                "params": [], 
+                "type": "Type"
+            }, 
+            "type": "TypeDef"
+        }, 
+        "mkConnectalTop": {
+            "type": "Module"
+        }, 
+        "mkLedController": {
+            "type": "Module"
+        }
+    }, 
+    "interfaces": [
+        {
+            "Package": "LedController", 
+            "decls": [
+                {
+                    "name": "setLeds", 
+                    "params": [
+                        {
+                            "name": "v", 
+                            "type": {
+                                "name": "Bit", 
+                                "params": [
+                                    {
+                                        "name": "8", 
+                                        "params": [], 
+                                        "type": "Type"
+                                    }
+                                ], 
+                                "type": "Type"
+                            }
+                        }, 
+                        {
+                            "name": "duration", 
+                            "type": {
+                                "name": "Bit", 
+                                "params": [
+                                    {
+                                        "name": "32", 
+                                        "params": [], 
+                                        "type": "Type"
+                                    }
+                                ], 
+                                "type": "Type"
+                            }
+                        }
+                    ]
+                }
+            ], 
+            "moduleContext": "", 
+            "name": "LedControllerRequest", 
+            "parentLportal": "portal", 
+            "parentPortal": "Portal"
+        }
+    ], 
+    "interfacesList": [
+        "LedControllerRequest"
+    ]
+}

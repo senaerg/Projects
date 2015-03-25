@@ -1,0 +1,10 @@
+add_files -scan_for_includes verilog/mkZynqTop.v /home/ubuntu/connectal/verilog/CONNECTNET2.v verilog/SyncResetA.v verilog/SizedFIFO.v verilog/ResetInverter.v verilog/FIFO2.v verilog/FIFO1.v verilog/mkLedControllerRequestInputPipes.v verilog/FIFO10.v 
+    Elapsed time 0 seconds
+read_xdc /home/ubuntu/connectal/constraints/xilinx/zedboard.xdc
+    Elapsed time 0 seconds
+read_xdc /home/ubuntu/connectal/constraints/xilinx/zc7z020clg484.xdc
+    Elapsed time 0 seconds
+synth_design  -name mkZynqTop -top mkZynqTop -part xc7z020clg484-1 -flatten rebuilt -include_dirs "verilog /home/ubuntu/connectal/verilog" -mode default
+    Elapsed time 45 seconds
+write_checkpoint -force ./Synth/mkZynqTop/mkZynqTop-synth.dcp
+    Elapsed time 0 seconds

@@ -1,0 +1,186 @@
+=== Generated schedule for mkBsimTop ===
+
+Rule schedule
+-------------
+Rule: host_crw_count
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: host_crw_init_rule
+Predicate: host_crw_init_fsm_onceReady
+Blocking rules: (none)
+ 
+Rule: top_lLedController_updateLeds
+Predicate: (! (top_lLedController_remainingDuration == 32'd0)) ||
+	   top_lLedController_ledsCmdFifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: top_handle_setLeds_request
+Predicate: top_lLedControllerRequestInputPipes.RDY_setLeds_PipeOut_deq &&
+	   top_lLedControllerRequestInputPipes.RDY_setLeds_PipeOut_first &&
+	   top_lLedController_ledsCmdFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatRule
+Predicate: top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_requestFifo.i_notEmpty &&
+	   top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatRule
+Predicate: top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_requestFifo.i_notEmpty &&
+	   top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: top_portalEnt_0_ctrlPort_count
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: top_portalEnt_0_ctrlPort_writeDataRule
+Predicate: top_portalEnt_0_ctrlPort_fifoWriteDataFifo.i_notEmpty &&
+	   top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo.i_notEmpty &&
+	   ((! top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo.first[0]) ||
+	    top_portalEnt_0_ctrlPort_fifoWriteDoneFifo.i_notFull)
+Blocking rules: (none)
+ 
+Rule: top_portalEnt_0_memslave_fifoReadAddrGenerator_addrBeatRule
+Predicate: top_portalEnt_0_memslave_fifoReadAddrGenerator_requestFifo.i_notEmpty &&
+	   top_portalEnt_0_memslave_fifoReadAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: top_portalEnt_0_memslave_fifoWriteAddrGenerator_addrBeatRule
+Predicate: top_portalEnt_0_memslave_fifoWriteAddrGenerator_requestFifo.i_notEmpty &&
+	   top_portalEnt_0_memslave_fifoWriteAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: top_portalEnt_0_memslave_write_done
+Predicate: top_portalEnt_0_memslave_wsCtrl.i_notEmpty &&
+	   top_portalEnt_0_memslave_ws.i_notEmpty &&
+	   top_portalEnt_0_memslave_doneFifo.i_notFull &&
+	   (top_portalEnt_0_memslave_wsCtrl.first
+	    ? top_portalEnt_0_ctrlPort_fifoWriteDoneFifo.i_notEmpty
+	    : top_portalEnt_0_memslave_fifoWriteDoneFifo.i_notEmpty)
+Blocking rules: (none)
+ 
+Rule: top_portalEnt_0_memslave_req_aw
+Predicate: top_portalEnt_0_memslave_wsCtrl.i_notEmpty &&
+	   top_portalEnt_0_memslave_req_aws.i_notEmpty &&
+	   (top_portalEnt_0_memslave_wsCtrl.first
+	    ? top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_requestFifo.i_notFull
+	    : top_portalEnt_0_memslave_fifoWriteAddrGenerator_requestFifo.i_notFull)
+Blocking rules: (none)
+ 
+Rule: top_portalEnt_0_memslave_req_ar
+Predicate: top_portalEnt_0_memslave_req_ars.i_notEmpty &&
+	   top_portalEnt_0_memslave_rsCtrl.i_notEmpty &&
+	   (top_portalEnt_0_memslave_rsCtrl.first
+	    ? top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_requestFifo.i_notFull
+	    : top_portalEnt_0_memslave_fifoReadAddrGenerator_requestFifo.i_notFull)
+Blocking rules: (none)
+ 
+Rule: top_ctrl_mux_writeTop
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: top_ctrl_mux_rv_readDataPipes_0_connect
+Predicate: top_portalEnt_0_memslave_rsCtrl.i_notEmpty &&
+	   top_portalEnt_0_memslave_rs.i_notEmpty &&
+	   top_ctrl_mux_rv_readDataPipes_0_fifo.i_notFull &&
+	   (top_portalEnt_0_memslave_rsCtrl.first
+	    ? top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo.i_notEmpty
+	    : top_portalEnt_0_memslave_fifoReadAddrGenerator_addrBeatFifo.i_notEmpty)
+Blocking rules: (none)
+ 
+Rule: top_ctrl_mux_rv_writeDataPipes_0_connect
+Predicate: top_portalEnt_0_memslave_wsCtrl.i_notEmpty &&
+	   top_ctrl_mux_rv_writeDataPipes_0_fifo.i_notEmpty &&
+	   (top_portalEnt_0_memslave_wsCtrl.first
+	    ? top_portalEnt_0_ctrlPort_fifoWriteDataFifo.i_notFull
+	    : (top_lLedControllerRequestInputPipes.RDY_portalIfc_requests_0_enq &&
+	       top_portalEnt_0_memslave_fifoWriteAddrGenerator_addrBeatFifo.i_notEmpty &&
+	       ((! top_portalEnt_0_memslave_fifoWriteAddrGenerator_addrBeatFifo.first[0]) ||
+		top_portalEnt_0_memslave_fifoWriteDoneFifo.i_notFull)))
+Blocking rules: (none)
+ 
+Rule: top_ctrl_mux_rv_0_connect
+Predicate: top_ctrl_mux_rv_write_data.i_notEmpty &&
+	   top_ctrl_mux_rv_writeDataPipes_0_fifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: top_ctrl_mux_rv_req_aw
+Predicate: top_ctrl_mux_rv_req_aws.i_notEmpty &&
+	   top_portalEnt_0_memslave_req_aws.i_notFull &&
+	   top_portalEnt_0_memslave_ws.i_notFull &&
+	   top_portalEnt_0_memslave_wsCtrl.i_notFull
+Blocking rules: (none)
+ 
+Rule: top_ctrl_mux_rv_req_ar
+Predicate: top_ctrl_mux_rv_req_ars.i_notEmpty &&
+	   top_portalEnt_0_memslave_req_ars.i_notFull &&
+	   top_portalEnt_0_memslave_rs.i_notFull &&
+	   top_portalEnt_0_memslave_rsCtrl.i_notFull
+Blocking rules: (none)
+ 
+Rule: top_ctrl_mux_rv_write_done_rule
+Predicate: top_ctrl_mux_rv_ws.i_notEmpty &&
+	   top_portalEnt_0_memslave_doneFifo.i_notEmpty &&
+	   top_ctrl_mux_rv_doneFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: Prelude_inst_changeSpecialWires_mkConnectionGetPut
+Predicate: checkForRequest(32'd0) &&
+	   top_ctrl_mux_rv_req_ars.i_notFull && top_ctrl_mux_rv_rs.i_notFull
+Blocking rules: (none)
+ 
+Rule: Prelude_inst_changeSpecialWires_1_mkConnectionGetPut
+Predicate: top_ctrl_mux_rv_rs.i_notEmpty &&
+	   top_ctrl_mux_rv_readDataPipes_0_fifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: Prelude_inst_changeSpecialWires_2_mkConnectionGetPut
+Predicate: checkForRequest(32'd1) &&
+	   (! host_crw_wf_rv.port1__read[32]) &&
+	   top_ctrl_mux_rv_req_aws.i_notFull && top_ctrl_mux_rv_ws.i_notFull
+Blocking rules: (none)
+ 
+Rule: Prelude_inst_changeSpecialWires_3_mkConnectionGetPut
+Predicate: host_crw_wf_rv.port0__read[32] &&
+	   top_ctrl_mux_rv_ws.i_notEmpty &&
+	   top_ctrl_mux_rv_write_data.i_notFull
+Blocking rules: (none)
+ 
+Rule: Prelude_inst_changeSpecialWires_4_mkConnectionGetPut
+Predicate: top_ctrl_mux_rv_doneFifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: int_rule
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: int_rule,
+			 host_crw_count,
+			 host_crw_init_rule,
+			 top_lLedController_updateLeds,
+			 top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatRule,
+			 top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatRule,
+			 top_portalEnt_0_memslave_req_aw,
+			 top_portalEnt_0_memslave_req_ar,
+			 top_portalEnt_0_memslave_fifoReadAddrGenerator_addrBeatRule,
+			 top_portalEnt_0_memslave_fifoWriteAddrGenerator_addrBeatRule,
+			 top_ctrl_mux_rv_req_aw,
+			 top_ctrl_mux_rv_req_ar,
+			 top_ctrl_mux_rv_write_done_rule,
+			 top_ctrl_mux_rv_readDataPipes_0_connect,
+			 top_portalEnt_0_ctrlPort_count,
+			 top_portalEnt_0_ctrlPort_writeDataRule,
+			 top_ctrl_mux_writeTop,
+			 top_ctrl_mux_rv_writeDataPipes_0_connect,
+			 top_handle_setLeds_request,
+			 top_portalEnt_0_memslave_write_done,
+			 top_ctrl_mux_rv_0_connect,
+			 Prelude_inst_changeSpecialWires_mkConnectionGetPut,
+			 Prelude_inst_changeSpecialWires_1_mkConnectionGetPut,
+			 Prelude_inst_changeSpecialWires_3_mkConnectionGetPut,
+			 Prelude_inst_changeSpecialWires_2_mkConnectionGetPut,
+			 Prelude_inst_changeSpecialWires_4_mkConnectionGetPut
+
+=========================================

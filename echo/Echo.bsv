@@ -26,11 +26,13 @@ import Vector::*;
 interface EchoIndication;
     method Action heard(Bit#(32) v);
     method Action heard2(Bit#(16) a, Bit#(16) b);
+    method Action heard3(Bit#(16) a, Bit#(16) b, Bit#(16) c);
 endinterface
 
 interface EchoRequest;
    method Action say(Bit#(32) v);
    method Action say2(Bit#(16) a, Bit#(16) b);
+   method Action say3(Bit#(16) a, Bit#(16) b, Bit#(16) c);
    method Action setLeds(Bit#(8) v);
 endinterface
 
@@ -43,10 +45,16 @@ typedef struct {
 	Bit#(16) b;
 } EchoPair deriving (Bits);
 
+typedef struct{
+        Bit#(16) a;
+        Bit#(16) b;
+        Bit#(16) c;
+}EchoTriple deriving(Bits);
+
 module mkEcho#(EchoIndication indication)(Echo);
     FIFO#(Bit#(32)) delay <- mkSizedFIFO(8);
     FIFO#(EchoPair) delay2 <- mkSizedFIFO(8);
-
+    FIFO#(EchoTriple) delay3 <-mkSizedFIFO(8);
     rule heard;
         delay.deq;
         indication.heard(delay.first);
@@ -56,9 +64,14 @@ module mkEcho#(EchoIndication indication)(Echo);
     rule heard2;
         delay2.deq;
         indication.heard2(delay2.first.b, delay2.first.a);
-	$display("mkEcho::heard2");
+	$display("mkEcho::heard2 ");
     endrule
    
+   rule heard3;
+       delay3.deq;
+       indication.heard3(delay3.first.a,delay3.first.b,delay3.first.c);
+       $display("mkEcho::heard3" );
+   endrule 
    interface EchoRequest request;
       method Action say(Bit#(32) v);
 	 delay.enq(v);
@@ -66,6 +79,10 @@ module mkEcho#(EchoIndication indication)(Echo);
       
       method Action say2(Bit#(16) a, Bit#(16) b);
 	 delay2.enq(EchoPair { a: a, b: b});
+      endmethod
+      
+      method Action say3(Bit#(16) a,Bit#(16) b,Bit#(16) c);
+         delay3.enq(EchoTriple { a:a, b:b,c:c});
       endmethod
       
       method Action setLeds(Bit#(8) v);

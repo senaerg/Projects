@@ -1,0 +1,804 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Wed Mar 25 12:51:23 2015
+# Process ID: 12252
+# Log file: /home/ubuntu/Projects/leds/zedboard/vivado.log
+# Journal file: /home/ubuntu/Projects/leds/zedboard/vivado.jou
+#-----------------------------------------------------------
+source /home/ubuntu/fpgamake/tcl/synth.tcl -notrace
+add_files -scan_for_includes verilog/mkZynqTop.v /home/ubuntu/connectal/verilog/CONNECTNET2.v verilog/SyncResetA.v verilog/SizedFIFO.v verilog/ResetInverter.v verilog/FIFO2.v verilog/FIFO1.v verilog/mkLedControllerRequestInputPipes.v verilog/FIFO10.v 
+Elapsed time 0 seconds
+read_xdc /home/ubuntu/connectal/constraints/xilinx/zedboard.xdc
+Elapsed time 0 seconds
+read_xdc /home/ubuntu/connectal/constraints/xilinx/zc7z020clg484.xdc
+Elapsed time 0 seconds
+synth_design  -name mkZynqTop -top mkZynqTop -part xc7z020clg484-1 -flatten rebuilt -include_dirs "verilog /home/ubuntu/connectal/verilog" -mode default
+Command: synth_design -name mkZynqTop -top mkZynqTop -part xc7z020clg484-1 -flatten rebuilt -include_dirs {verilog /home/ubuntu/connectal/verilog} -mode default
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 889.824 ; gain = 144.734 ; free physical = 12794 ; free virtual = 14163
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mkZynqTop' [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:66]
+INFO: [Synth 8-638] synthesizing module 'BSCANE2' [/afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/scripts/rt/data/unisim_comp.v:421]
+	Parameter DISABLE_JTAG bound to: FALSE - type: string 
+	Parameter JTAG_CHAIN bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'BSCANE2' (1#1) [/afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/scripts/rt/data/unisim_comp.v:421]
+INFO: [Synth 8-638] synthesizing module 'SyncResetA' [/home/ubuntu/Projects/leds/zedboard/verilog/SyncResetA.v:43]
+	Parameter RSTDELAY bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'SyncResetA' (2#1) [/home/ubuntu/Projects/leds/zedboard/verilog/SyncResetA.v:43]
+INFO: [Synth 8-638] synthesizing module 'BUFG' [/afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/scripts/rt/data/unisim_comp.v:606]
+INFO: [Synth 8-256] done synthesizing module 'BUFG' (3#1) [/afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/scripts/rt/data/unisim_comp.v:606]
+INFO: [Synth 8-638] synthesizing module 'CONNECTNET2' [/home/ubuntu/connectal/verilog/CONNECTNET2.v:24]
+INFO: [Synth 8-256] done synthesizing module 'CONNECTNET2' (4#1) [/home/ubuntu/connectal/verilog/CONNECTNET2.v:24]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1053]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1056]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1059]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1062]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1065]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1068]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1071]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1074]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1077]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1080]
+INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [/afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/scripts/rt/data/unisim_comp.v:15990]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT3_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter CLKOUT4_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT5_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT6_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter SS_EN bound to: FALSE - type: string 
+	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PSEN_INVERTED bound to: 1'b0 
+	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter CLKOUT1_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT2_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT3_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT4_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT5_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT6_DIVIDE bound to: 10 - type: integer 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
+	Parameter CLKFBOUT_MULT_F bound to: 10.000000 - type: float 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: float 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: float 
+	Parameter CLKOUT0_DIVIDE_F bound to: 5.000000 - type: float 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: float 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: float 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: float 
+INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (5#1) [/afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/scripts/rt/data/unisim_comp.v:15990]
+WARNING: [Synth 8-350] instance 'ps7_clockGen_pll' of module 'MMCME2_ADV' requires 33 connections, but only 28 given [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1122]
+INFO: [Synth 8-638] synthesizing module 'ResetInverter' [/home/ubuntu/Projects/leds/zedboard/verilog/ResetInverter.v:30]
+INFO: [Synth 8-256] done synthesizing module 'ResetInverter' (6#1) [/home/ubuntu/Projects/leds/zedboard/verilog/ResetInverter.v:30]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1160]
+INFO: [Synth 8-638] synthesizing module 'SyncResetA__parameterized0' [/home/ubuntu/Projects/leds/zedboard/verilog/SyncResetA.v:43]
+	Parameter RSTDELAY bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'SyncResetA__parameterized0' (6#1) [/home/ubuntu/Projects/leds/zedboard/verilog/SyncResetA.v:43]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1169]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1201]
+INFO: [Synth 8-638] synthesizing module 'IDELAYCTRL' [/afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/scripts/rt/data/unisim_comp.v:12244]
+INFO: [Synth 8-256] done synthesizing module 'IDELAYCTRL' (7#1) [/afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/scripts/rt/data/unisim_comp.v:12244]
+INFO: [Synth 8-638] synthesizing module 'PS7' [/afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/scripts/rt/data/unisim_comp.v:26452]
+INFO: [Synth 8-256] done synthesizing module 'PS7' (8#1) [/afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/scripts/rt/data/unisim_comp.v:26452]
+WARNING: [Synth 8-350] instance 'ps7_ps7_foo' of module 'PS7' requires 620 connections, but only 434 given [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:1215]
+INFO: [Synth 8-638] synthesizing module 'FIFO1' [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO1.v:51]
+	Parameter width bound to: 6 - type: integer 
+	Parameter guarded bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'FIFO1' (9#1) [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO1.v:51]
+INFO: [Synth 8-638] synthesizing module 'FIFO2' [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO2.v:51]
+	Parameter width bound to: 39 - type: integer 
+	Parameter guarded bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'FIFO2' (10#1) [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO2.v:51]
+INFO: [Synth 8-638] synthesizing module 'FIFO1__parameterized0' [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO1.v:51]
+	Parameter width bound to: 26 - type: integer 
+	Parameter guarded bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'FIFO1__parameterized0' (10#1) [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO1.v:51]
+INFO: [Synth 8-638] synthesizing module 'FIFO10' [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO10.v:47]
+	Parameter guarded bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'FIFO10' (11#1) [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO10.v:47]
+INFO: [Synth 8-638] synthesizing module 'mkLedControllerRequestInputPipes' [/home/ubuntu/Projects/leds/zedboard/verilog/mkLedControllerRequestInputPipes.v:47]
+INFO: [Synth 8-638] synthesizing module 'FIFO1__parameterized1' [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO1.v:51]
+	Parameter width bound to: 40 - type: integer 
+	Parameter guarded bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'FIFO1__parameterized1' (11#1) [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO1.v:51]
+INFO: [Synth 8-256] done synthesizing module 'mkLedControllerRequestInputPipes' (12#1) [/home/ubuntu/Projects/leds/zedboard/verilog/mkLedControllerRequestInputPipes.v:47]
+INFO: [Synth 8-638] synthesizing module 'SizedFIFO' [/home/ubuntu/Projects/leds/zedboard/verilog/SizedFIFO.v:58]
+	Parameter p1width bound to: 40 - type: integer 
+	Parameter p2depth bound to: 32 - type: integer 
+	Parameter p3cntr_width bound to: 5 - type: integer 
+	Parameter guarded bound to: 1 - type: integer 
+	Parameter p2depth2 bound to: 30 - type: integer 
+INFO: [Synth 8-4472] Detected and applied attribute RAM_STYLE = DISTRIBUTED [/home/ubuntu/Projects/leds/zedboard/verilog/SizedFIFO.v:89]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/ubuntu/Projects/leds/zedboard/verilog/SizedFIFO.v:144]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/ubuntu/Projects/leds/zedboard/verilog/SizedFIFO.v:201]
+INFO: [Synth 8-256] done synthesizing module 'SizedFIFO' (13#1) [/home/ubuntu/Projects/leds/zedboard/verilog/SizedFIFO.v:58]
+INFO: [Synth 8-638] synthesizing module 'FIFO2__parameterized0' [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO2.v:51]
+	Parameter width bound to: 20 - type: integer 
+	Parameter guarded bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'FIFO2__parameterized0' (13#1) [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO2.v:51]
+INFO: [Synth 8-638] synthesizing module 'FIFO1__parameterized2' [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO1.v:51]
+	Parameter width bound to: 19 - type: integer 
+	Parameter guarded bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'FIFO1__parameterized2' (13#1) [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO1.v:51]
+INFO: [Synth 8-638] synthesizing module 'FIFO2__parameterized1' [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO2.v:51]
+	Parameter width bound to: 6 - type: integer 
+	Parameter guarded bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'FIFO2__parameterized1' (13#1) [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO2.v:51]
+INFO: [Synth 8-638] synthesizing module 'FIFO1__parameterized3' [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO1.v:51]
+	Parameter width bound to: 1 - type: integer 
+	Parameter guarded bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'FIFO1__parameterized3' (13#1) [/home/ubuntu/Projects/leds/zedboard/verilog/FIFO1.v:51]
+INFO: [Synth 8-256] done synthesizing module 'mkZynqTop' (14#1) [/home/ubuntu/Projects/leds/zedboard/verilog/mkZynqTop.v:66]
+WARNING: [Synth 8-3917] design mkZynqTop has port CLK_GATE_deleteme_unused_clock driven by constant 1
+WARNING: [Synth 8-3917] design mkZynqTop has port CLK_GATE_deleteme_unused_clock_0 driven by constant 1
+WARNING: [Synth 8-3917] design mkZynqTop has port CLK_GATE_deleteme_unused_clock_1 driven by constant 1
+WARNING: [Synth 8-3917] design mkZynqTop has port CLK_GATE_deleteme_unused_clock_2 driven by constant 1
+WARNING: [Synth 8-3917] design mkZynqTop has port CLK_GATE_deleteme_unused_clock_3 driven by constant 1
+WARNING: [Synth 8-3331] design mkZynqTop has unconnected port CLK
+WARNING: [Synth 8-3331] design mkZynqTop has unconnected port RST_N
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 925.066 ; gain = 179.977 ; free physical = 12756 ; free virtual = 14126
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 925.066 ; gain = 179.977 ; free physical = 12756 ; free virtual = 14126
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from /afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from /afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from /afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from /afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/data/parts/xilinx/zynq/PinFunctions.xml...
+Loading package from /afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from /afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/data/./parts/xilinx/zynq/IOStandards.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/ubuntu/connectal/constraints/xilinx/zedboard.xdc]
+Finished Parsing XDC File [/home/ubuntu/connectal/constraints/xilinx/zedboard.xdc]
+Parsing XDC File [/home/ubuntu/connectal/constraints/xilinx/zc7z020clg484.xdc]
+Finished Parsing XDC File [/home/ubuntu/connectal/constraints/xilinx/zc7z020clg484.xdc]
+INFO: [Timing 38-2] Deriving generated clocks
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ubuntu/connectal/constraints/xilinx/zc7z020clg484.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mkZynqTop_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/mkZynqTop_propImpl.xdc] to anoth XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1206.531 ; gain = 0.000 ; free physical = 12541 ; free virtual = 13911
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1206.531 ; gain = 461.441 ; free physical = 12540 ; free virtual = 13910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1206.531 ; gain = 461.441 ; free physical = 12540 ; free virtual = 13910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1206.531 ; gain = 461.441 ; free physical = 12540 ; free virtual = 13910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1206.531 ; gain = 461.441 ; free physical = 12537 ; free virtual = 13906
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'ps7_clockGen_pll_reset' (ResetInverter) to 'ps7_idel_reset'
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 4     
+	   2 Input      5 Bit       Adders := 6     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               40 Bit    Registers := 1     
+	               39 Bit    Registers := 8     
+	               32 Bit    Registers := 2     
+	               26 Bit    Registers := 2     
+	               20 Bit    Registers := 8     
+	               19 Bit    Registers := 6     
+	                8 Bit    Registers := 5     
+	                6 Bit    Registers := 6     
+	                5 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 7     
+	                1 Bit    Registers := 53    
++---Muxes : 
+	   5 Input     40 Bit        Muxes := 1     
+	   2 Input     39 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	   7 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 12    
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      5 Bit        Muxes := 12    
+	   7 Input      5 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 95    
+	   7 Input      1 Bit        Muxes := 7     
+	   5 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module mkZynqTop 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 4     
+	   2 Input      5 Bit       Adders := 4     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                8 Bit    Registers := 5     
+	                5 Bit    Registers := 4     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input     39 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	   7 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 12    
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      5 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 14    
+Module SyncResetA 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+Module CONNECTNET2 
+Detailed RTL Component Info : 
+Module ResetInverter 
+Detailed RTL Component Info : 
+Module SyncResetA__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
+Module FIFO1 
+Detailed RTL Component Info : 
++---Registers : 
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module FIFO2 
+Detailed RTL Component Info : 
++---Registers : 
+	               39 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module FIFO1__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               26 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module FIFO10 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module FIFO1__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               40 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module mkLedControllerRequestInputPipes 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module SizedFIFO 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   5 Input     40 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 4     
+	   7 Input      5 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 7     
+	   5 Input      1 Bit        Muxes := 1     
+Module FIFO2__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               20 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module FIFO1__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	               19 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module FIFO2__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                6 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module FIFO1__parameterized3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1206.531 ; gain = 461.441 ; free physical = 12537 ; free virtual = 13906
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design mkZynqTop has port CLK_GATE_deleteme_unused_clock driven by constant 1
+WARNING: [Synth 8-3917] design mkZynqTop has port CLK_GATE_deleteme_unused_clock_0 driven by constant 1
+WARNING: [Synth 8-3917] design mkZynqTop has port CLK_GATE_deleteme_unused_clock_1 driven by constant 1
+WARNING: [Synth 8-3917] design mkZynqTop has port CLK_GATE_deleteme_unused_clock_2 driven by constant 1
+WARNING: [Synth 8-3917] design mkZynqTop has port CLK_GATE_deleteme_unused_clock_3 driven by constant 1
+WARNING: [Synth 8-3331] design mkZynqTop has unconnected port CLK
+WARNING: [Synth 8-3331] design mkZynqTop has unconnected port RST_N
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1206.531 ; gain = 461.441 ; free physical = 12537 ; free virtual = 13906
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1206.531 ; gain = 461.441 ; free physical = 12537 ; free virtual = 13906
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: 
++------------+----------------------------------------+--------------------+----------------------+--------------+-------------------+
+|Module Name | RTL Object                             | Inference Criteria | Size (depth X width) | Primitives   | Hierarchical Name | 
++------------+----------------------------------------+--------------------+----------------------+--------------+-------------------+
+|mkZynqTop   | top_lLedController_ledsCmdFifo/arr_reg | User Attribute     | 32 X 40              | RAM32M x 7   | mkZynqTop/ram__2  | 
++------------+----------------------------------------+--------------------+----------------------+--------------+-------------------+
+
+Note: The table shows RAMs generated at current stage. Some RAM generation could be reversed due to later optimizations. Multiple instantiated RAMs are reported only once. "Hierarchical Name" reflects the hierarchical modules names of the RAM and only part of it is displayed.
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\top_ctrl_mux_rv_req_ars/D_OUT_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\top_ctrl_mux_rv_req_aws/D_OUT_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\top_portalEnt_0_memslave_req_ars/D_OUT_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\top_portalEnt_0_memslave_req_aws/D_OUT_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_requestFifo/D_OUT_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_requestFifo/D_OUT_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\top_portalEnt_0_memslave_fifoReadAddrGenerator_requestFifo/D_OUT_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\top_portalEnt_0_memslave_fifoWriteAddrGenerator_requestFifo/D_OUT_reg[7] )
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_readDataPipes_0_fifo/data1_reg_reg[0] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_readDataPipes_0_fifo/data0_reg_reg[0] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data1_reg_reg[6] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data1_reg_reg[5] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data1_reg_reg[4] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data1_reg_reg[3] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data1_reg_reg[2] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data1_reg_reg[1] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data1_reg_reg[0] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data0_reg_reg[6] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data0_reg_reg[5] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data0_reg_reg[4] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data0_reg_reg[3] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data0_reg_reg[2] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data0_reg_reg[1] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_writeDataPipes_0_fifo/data0_reg_reg[0] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data1_reg_reg[6] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data1_reg_reg[5] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data1_reg_reg[4] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data1_reg_reg[3] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data1_reg_reg[2] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data1_reg_reg[1] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data1_reg_reg[0] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data0_reg_reg[6] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data0_reg_reg[5] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data0_reg_reg[4] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data0_reg_reg[3] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data0_reg_reg[2] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data0_reg_reg[1] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_ctrl_mux_rv_write_data/data0_reg_reg[0] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data1_reg_reg[14] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data1_reg_reg[13] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data1_reg_reg[12] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data1_reg_reg[11] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data1_reg_reg[10] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data1_reg_reg[9] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data1_reg_reg[8] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data1_reg_reg[7] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data1_reg_reg[0] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data0_reg_reg[14] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data0_reg_reg[13] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data0_reg_reg[12] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data0_reg_reg[11] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data0_reg_reg[10] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data0_reg_reg[9] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data0_reg_reg[8] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data0_reg_reg[7] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo/data0_reg_reg[0] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data1_reg_reg[14] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data1_reg_reg[13] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data1_reg_reg[12] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data1_reg_reg[11] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data1_reg_reg[10] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data1_reg_reg[9] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data1_reg_reg[8] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data1_reg_reg[7] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data0_reg_reg[14] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data0_reg_reg[13] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data0_reg_reg[12] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data0_reg_reg[11] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data0_reg_reg[10] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data0_reg_reg[9] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data0_reg_reg[8] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo/data0_reg_reg[7] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[38] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[37] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[36] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[35] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[34] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[33] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[32] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[31] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[30] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[29] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[28] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[27] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[26] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[25] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[24] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[23] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[22] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[21] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[20] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[19] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[18] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[17] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[16] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[15] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[14] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[13] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[12] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[11] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[10] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[9] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[8] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[6] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[5] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[4] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[3] ) is unused and will be removed from module mkZynqTop.
+WARNING: [Synth 8-3332] Sequential element (\top_portalEnt_0_ctrlPort_fifoWriteDataFifo/data1_reg_reg[2] ) is unused and will be removed from module mkZynqTop.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1206.535 ; gain = 461.445 ; free physical = 12505 ; free virtual = 13874
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1206.535 ; gain = 461.445 ; free physical = 12505 ; free virtual = 13874
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1206.535 ; gain = 461.445 ; free physical = 12505 ; free virtual = 13874
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1206.535 ; gain = 461.445 ; free physical = 12505 ; free virtual = 13874
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:41 . Memory (MB): peak = 1390.527 ; gain = 645.438 ; free physical = 12310 ; free virtual = 13680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:42 . Memory (MB): peak = 1409.535 ; gain = 664.445 ; free physical = 12291 ; free virtual = 13660
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:44 . Memory (MB): peak = 1425.543 ; gain = 680.453 ; free physical = 12275 ; free virtual = 13644
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4560] design has 15 instantiated BUFGs while the limit set by the -bufg synthesis option is 12
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:44 . Memory (MB): peak = 1425.543 ; gain = 680.453 ; free physical = 12275 ; free virtual = 13644
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:44 . Memory (MB): peak = 1425.543 ; gain = 680.453 ; free physical = 12275 ; free virtual = 13644
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 1425.543 ; gain = 680.453 ; free physical = 12275 ; free virtual = 13644
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BIBUF      |   130|
+|2     |BSCANE2    |     1|
+|3     |BUFG       |    26|
+|4     |CARRY4     |    24|
+|5     |IDELAYCTRL |     1|
+|6     |LUT1       |   102|
+|7     |LUT2       |    16|
+|8     |LUT3       |   101|
+|9     |LUT4       |    65|
+|10    |LUT5       |   199|
+|11    |LUT6       |   184|
+|12    |MMCME2_ADV |     1|
+|13    |MUXF7      |     1|
+|14    |PS7        |     1|
+|15    |RAM32M     |     7|
+|16    |FDCE       |    12|
+|17    |FDRE       |   781|
+|18    |FDSE       |     6|
+|19    |OBUF       |    23|
++------+-----------+------+
+
+Report Instance Areas: 
++------+---------------------------------------------------------------+---------------------------------+------+
+|      |Instance                                                       |Module                           |Cells |
++------+---------------------------------------------------------------+---------------------------------+------+
+|1     |top                                                            |                                 |  1681|
+|2     |  ps7_derived_reset_unbuffered                                 |SyncResetA                       |     3|
+|3     |  ps7_idel_delayed                                             |SyncResetA_0                     |     2|
+|4     |  top_ctrl_mux_rv_doneFifo                                     |FIFO1                            |    14|
+|5     |  top_ctrl_mux_rv_readDataPipes_0_fifo                         |FIFO2                            |   160|
+|6     |  top_ctrl_mux_rv_req_ars                                      |FIFO1__parameterized0            |    30|
+|7     |  top_ctrl_mux_rv_req_aws                                      |FIFO1__parameterized0_1          |    30|
+|8     |  top_ctrl_mux_rv_rs                                           |FIFO10                           |     3|
+|9     |  top_ctrl_mux_rv_writeDataPipes_0_fifo                        |FIFO2_2                          |   102|
+|10    |  top_ctrl_mux_rv_write_data                                   |FIFO2_3                          |   103|
+|11    |  top_ctrl_mux_rv_ws                                           |FIFO10_4                         |     4|
+|12    |  top_lLedControllerRequestInputPipes                          |mkLedControllerRequestInputPipes |    52|
+|13    |    setLeds_requestFifo_fifo                                   |FIFO1__parameterized1            |    42|
+|14    |  top_lLedController_ledsCmdFifo                               |SizedFIFO                        |   167|
+|15    |  top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_addrBeatFifo  |FIFO2__parameterized0            |    83|
+|16    |  top_portalEnt_0_ctrlPort_fifoReadAddrGenerator_requestFifo   |FIFO1__parameterized2            |    44|
+|17    |  top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo |FIFO2__parameterized0_5          |    51|
+|18    |  top_portalEnt_0_ctrlPort_fifoWriteAddrGenerator_requestFifo  |FIFO1__parameterized2_6          |    44|
+|19    |  top_portalEnt_0_ctrlPort_fifoWriteDataFifo                   |FIFO2_7                          |     9|
+|20    |  top_portalEnt_0_ctrlPort_fifoWriteDoneFifo                   |FIFO2__parameterized1            |    30|
+|21    |  top_portalEnt_0_memslave_doneFifo                            |FIFO1_8                          |     9|
+|22    |  top_portalEnt_0_memslave_fifoReadAddrGenerator_addrBeatFifo  |FIFO2__parameterized0_9          |    41|
+|23    |  top_portalEnt_0_memslave_fifoReadAddrGenerator_requestFifo   |FIFO1__parameterized2_10         |    44|
+|24    |  top_portalEnt_0_memslave_fifoWriteAddrGenerator_addrBeatFifo |FIFO2__parameterized0_11         |    28|
+|25    |  top_portalEnt_0_memslave_fifoWriteAddrGenerator_requestFifo  |FIFO1__parameterized2_12         |    27|
+|26    |  top_portalEnt_0_memslave_fifoWriteDoneFifo                   |FIFO2__parameterized1_13         |    16|
+|27    |  top_portalEnt_0_memslave_req_ars                             |FIFO1__parameterized2_14         |    16|
+|28    |  top_portalEnt_0_memslave_req_aws                             |FIFO1__parameterized2_15         |    16|
+|29    |  top_portalEnt_0_memslave_rs                                  |FIFO10_16                        |     1|
+|30    |  top_portalEnt_0_memslave_rsCtrl                              |FIFO1__parameterized3            |    15|
+|31    |  top_portalEnt_0_memslave_ws                                  |FIFO10_17                        |     1|
+|32    |  top_portalEnt_0_memslave_wsCtrl                              |FIFO1__parameterized3_18         |    30|
+|33    |  unused_reset_0_rc                                            |SyncResetA_19                    |     2|
+|34    |  unused_reset_1_rc                                            |SyncResetA_20                    |     3|
+|35    |  unused_reset_2_rc                                            |SyncResetA_21                    |     3|
+|36    |  unused_reset_3_rc                                            |SyncResetA_22                    |     3|
++------+---------------------------------------------------------------+---------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 1425.543 ; gain = 680.453 ; free physical = 12275 ; free virtual = 13644
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 289 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1425.543 ; gain = 304.016 ; free physical = 12280 ; free virtual = 13649
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 1425.543 ; gain = 680.453 ; free physical = 12280 ; free virtual = 13649
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+Parsing XDC File [/home/ubuntu/connectal/constraints/xilinx/zedboard.xdc]
+Finished Parsing XDC File [/home/ubuntu/connectal/constraints/xilinx/zedboard.xdc]
+Parsing XDC File [/home/ubuntu/connectal/constraints/xilinx/zc7z020clg484.xdc]
+Finished Parsing XDC File [/home/ubuntu/connectal/constraints/xilinx/zc7z020clg484.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 7 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 7 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+81 Infos, 129 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 1434.543 ; gain = 594.715 ; free physical = 12265 ; free virtual = 13635
+Elapsed time 45 seconds
+WARNING: [Vivado 12-584] No ports matched 'CLK_GATE_hdmi_clock_if'.
+disconnecting net CLK_GATE_deleteme_unused_clock from port CLK_GATE_deleteme_unused_clock
+disconnecting net CLK_GATE_deleteme_unused_clock_0 from port CLK_GATE_deleteme_unused_clock_0
+disconnecting net CLK_GATE_deleteme_unused_clock_1 from port CLK_GATE_deleteme_unused_clock_1
+disconnecting net CLK_GATE_deleteme_unused_clock_2 from port CLK_GATE_deleteme_unused_clock_2
+disconnecting net CLK_GATE_deleteme_unused_clock_3 from port CLK_GATE_deleteme_unused_clock_3
+disconnecting net CLK_deleteme_unused_clock from port CLK_deleteme_unused_clock
+disconnecting net CLK_deleteme_unused_clock_0 from port CLK_deleteme_unused_clock_0
+disconnecting net CLK_deleteme_unused_clock_1 from port CLK_deleteme_unused_clock_1
+disconnecting net CLK_deleteme_unused_clock_2 from port CLK_deleteme_unused_clock_2
+disconnecting net CLK_deleteme_unused_clock_3 from port CLK_deleteme_unused_clock_3
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock'.
+disconnecting net  from port CLK_GATE_deleteme_unused_clock
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock'.
+WARNING: [Coretcl 2-30] Cannot find net ''.
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_0'.
+disconnecting net  from port CLK_GATE_deleteme_unused_clock_0
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_0'.
+WARNING: [Coretcl 2-30] Cannot find net ''.
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_1'.
+disconnecting net  from port CLK_GATE_deleteme_unused_clock_1
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_1'.
+WARNING: [Coretcl 2-30] Cannot find net ''.
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_2'.
+disconnecting net  from port CLK_GATE_deleteme_unused_clock_2
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_2'.
+WARNING: [Coretcl 2-30] Cannot find net ''.
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_3'.
+disconnecting net  from port CLK_GATE_deleteme_unused_clock_3
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_3'.
+WARNING: [Coretcl 2-30] Cannot find net ''.
+disconnecting net RST_N_deleteme_unused_reset from port RST_N_deleteme_unused_reset
+disconnecting net RST_N_deleteme_unused_reset_0 from port RST_N_deleteme_unused_reset_0
+disconnecting net RST_N_deleteme_unused_reset_1 from port RST_N_deleteme_unused_reset_1
+disconnecting net RST_N_deleteme_unused_reset_2 from port RST_N_deleteme_unused_reset_2
+disconnecting net RST_N_deleteme_unused_reset_3 from port RST_N_deleteme_unused_reset_3
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock'.
+disconnecting net  from port CLK_GATE_deleteme_unused_clock
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock'.
+WARNING: [Coretcl 2-30] Cannot find net ''.
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_0'.
+disconnecting net  from port CLK_GATE_deleteme_unused_clock_0
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_0'.
+WARNING: [Coretcl 2-30] Cannot find net ''.
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_1'.
+disconnecting net  from port CLK_GATE_deleteme_unused_clock_1
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_1'.
+WARNING: [Coretcl 2-30] Cannot find net ''.
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_2'.
+disconnecting net  from port CLK_GATE_deleteme_unused_clock_2
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_2'.
+WARNING: [Coretcl 2-30] Cannot find net ''.
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_3'.
+disconnecting net  from port CLK_GATE_deleteme_unused_clock_3
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects CLK_GATE_deleteme_unused_clock_3'.
+WARNING: [Coretcl 2-30] Cannot find net ''.
+write_checkpoint -force ./Synth/mkZynqTop/mkZynqTop-synth.dcp
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.15 . Memory (MB): peak = 1434.547 ; gain = 0.000 ; free physical = 12264 ; free virtual = 13636
+Elapsed time 0 seconds
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 25 12:52:17 2015...

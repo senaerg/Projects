@@ -1,0 +1,192 @@
+=== Generated schedule for mkLedControllerRequestProxySynth ===
+
+Method schedule
+---------------
+Method: portalIfc_slave_read_server_readReq_put
+Ready signal: memPortal_memslave_req_ars.i_notFull &&
+	      memPortal_memslave_rs.i_notFull &&
+	      memPortal_memslave_rsCtrl.i_notFull
+Conflict-free: portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write,
+	       ifc_setLeds
+Conflicts: portalIfc_slave_read_server_readReq_put
+ 
+Method: portalIfc_slave_read_server_readData_get
+Ready signal: memPortal_memslave_rs.i_notEmpty &&
+	      memPortal_memslave_rsCtrl.i_notEmpty &&
+	      (memPortal_memslave_rsCtrl.first
+	       ? memPortal_ctrlPort_fifoReadAddrGenerator_addrBeatFifo.i_notEmpty
+	       : memPortal_memslave_fifoReadDataFifo.i_notEmpty)
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read
+Sequenced before: portalIfc_num_portals__write
+Sequenced before (restricted): ifc_setLeds
+Conflicts: portalIfc_slave_read_server_readData_get
+ 
+Method: portalIfc_slave_write_server_writeReq_put
+Ready signal: memPortal_memslave_req_aws.i_notFull &&
+	      memPortal_memslave_ws.i_notFull &&
+	      memPortal_memslave_wsCtrl.i_notFull
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write,
+	       ifc_setLeds
+Conflicts: portalIfc_slave_write_server_writeReq_put
+ 
+Method: portalIfc_slave_write_server_writeData_put
+Ready signal: memPortal_memslave_wsCtrl.i_notEmpty &&
+	      (memPortal_memslave_wsCtrl.first
+	       ? memPortal_ctrlPort_fifoWriteDataFifo.i_notFull
+	       : (memPortal_memslave_fifoWriteAddrGenerator_addrBeatFifo.i_notEmpty &&
+		  ((! memPortal_memslave_fifoWriteAddrGenerator_addrBeatFifo.first[0]) ||
+		   memPortal_memslave_fifoWriteDoneFifo.i_notFull)))
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write,
+	       ifc_setLeds
+Conflicts: portalIfc_slave_write_server_writeData_put
+ 
+Method: portalIfc_slave_write_server_writeDone_get
+Ready signal: memPortal_memslave_doneFifo.i_notEmpty
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write,
+	       ifc_setLeds
+Conflicts: portalIfc_slave_write_server_writeDone_get
+ 
+Method: portalIfc_interrupt__read
+Ready signal: True
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_read_server_readData_get,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       portalIfc_num_portals__write
+Sequenced before (restricted): ifc_setLeds
+ 
+Method: portalIfc_num_portals__write
+Ready signal: True
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_interrupt__read,
+	       ifc_setLeds
+Sequenced before (restricted): portalIfc_num_portals__write
+Sequenced after: portalIfc_slave_read_server_readData_get
+ 
+Method: ifc_setLeds
+Ready signal: dut.RDY_ifc_setLeds
+Conflict-free: portalIfc_slave_read_server_readReq_put,
+	       portalIfc_slave_write_server_writeReq_put,
+	       portalIfc_slave_write_server_writeData_put,
+	       portalIfc_slave_write_server_writeDone_get,
+	       portalIfc_num_portals__write
+Sequenced after (restricted): portalIfc_slave_read_server_readData_get,
+			      portalIfc_interrupt__read
+Conflicts: ifc_setLeds
+ 
+Rule schedule
+-------------
+Rule: memPortal_ctrlPort_fifoReadAddrGenerator_addrBeatRule
+Predicate: memPortal_ctrlPort_fifoReadAddrGenerator_requestFifo.i_notEmpty &&
+	   memPortal_ctrlPort_fifoReadAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memPortal_ctrlPort_fifoWriteAddrGenerator_addrBeatRule
+Predicate: memPortal_ctrlPort_fifoWriteAddrGenerator_requestFifo.i_notEmpty &&
+	   memPortal_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memPortal_ctrlPort_count
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memPortal_ctrlPort_writeDataRule
+Predicate: memPortal_ctrlPort_fifoWriteDataFifo.i_notEmpty &&
+	   memPortal_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo.i_notEmpty &&
+	   ((! memPortal_ctrlPort_fifoWriteAddrGenerator_addrBeatFifo.first[0]) ||
+	    memPortal_ctrlPort_fifoWriteDoneFifo.i_notFull)
+Blocking rules: (none)
+ 
+Rule: memPortal_memslave_fifoReadAddrGenerator_addrBeatRule
+Predicate: memPortal_memslave_fifoReadAddrGenerator_requestFifo.i_notEmpty &&
+	   memPortal_memslave_fifoReadAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memPortal_memslave_fifoWriteAddrGenerator_addrBeatRule
+Predicate: memPortal_memslave_fifoWriteAddrGenerator_requestFifo.i_notEmpty &&
+	   memPortal_memslave_fifoWriteAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memPortal_memslave_readDataRule
+Predicate: memPortal_memslave_fifoReadAddrGenerator_addrBeatFifo.i_notEmpty &&
+	   memPortal_memslave_fifoReadDataFifo.i_notFull &&
+	   ((! (memPortal_memslave_fifoReadAddrGenerator_addrBeatFifo.first[19:15] ==
+		5'd0)) ||
+	    (dut.RDY_portalIfc_indications_0_deq &&
+	     dut.RDY_portalIfc_indications_0_first))
+Blocking rules: (none)
+ 
+Rule: memPortal_memslave_write_done
+Predicate: memPortal_memslave_wsCtrl.i_notEmpty &&
+	   memPortal_memslave_ws.i_notEmpty &&
+	   memPortal_memslave_doneFifo.i_notFull &&
+	   (memPortal_memslave_wsCtrl.first
+	    ? memPortal_ctrlPort_fifoWriteDoneFifo.i_notEmpty
+	    : memPortal_memslave_fifoWriteDoneFifo.i_notEmpty)
+Blocking rules: (none)
+ 
+Rule: memPortal_memslave_req_aw
+Predicate: memPortal_memslave_wsCtrl.i_notEmpty &&
+	   memPortal_memslave_req_aws.i_notEmpty &&
+	   (memPortal_memslave_wsCtrl.first
+	    ? memPortal_ctrlPort_fifoWriteAddrGenerator_requestFifo.i_notFull
+	    : memPortal_memslave_fifoWriteAddrGenerator_requestFifo.i_notFull)
+Blocking rules: (none)
+ 
+Rule: memPortal_memslave_req_ar
+Predicate: memPortal_memslave_req_ars.i_notEmpty &&
+	   memPortal_memslave_rsCtrl.i_notEmpty &&
+	   (memPortal_memslave_rsCtrl.first
+	    ? memPortal_ctrlPort_fifoReadAddrGenerator_requestFifo.i_notFull
+	    : memPortal_memslave_fifoReadAddrGenerator_requestFifo.i_notFull)
+Blocking rules: (none)
+ 
+Logical execution order: portalIfc_slave_read_server_readReq_put,
+			 portalIfc_slave_write_server_writeReq_put,
+			 portalIfc_slave_write_server_writeData_put,
+			 portalIfc_slave_write_server_writeDone_get,
+			 portalIfc_interrupt__read,
+			 memPortal_ctrlPort_fifoReadAddrGenerator_addrBeatRule,
+			 memPortal_ctrlPort_fifoWriteAddrGenerator_addrBeatRule,
+			 memPortal_memslave_req_aw,
+			 memPortal_memslave_write_done,
+			 memPortal_memslave_req_ar,
+			 portalIfc_slave_read_server_readData_get,
+			 portalIfc_num_portals__write,
+			 memPortal_ctrlPort_count,
+			 memPortal_memslave_readDataRule,
+			 ifc_setLeds,
+			 memPortal_ctrlPort_writeDataRule,
+			 memPortal_memslave_fifoReadAddrGenerator_addrBeatRule,
+			 memPortal_memslave_fifoWriteAddrGenerator_addrBeatRule
+
+================================================================

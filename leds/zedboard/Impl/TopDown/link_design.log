@@ -1,0 +1,66 @@
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to dcp part: xc7z020clg484-1
+INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2014.4
+Loading clock regions from /afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from /afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from /afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from /afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/data/parts/xilinx/zynq/PinFunctions.xml...
+Loading package from /afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from /afs/csail.mit.edu/group/csg/tools/tools_lx86/xilinx2012/vivado2014.4/Vivado/2014.4/data/./parts/xilinx/zynq/IOStandards.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. CLK_GATE_deleteme_unused_clock_0_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. CLK_GATE_deleteme_unused_clock_1_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. CLK_GATE_deleteme_unused_clock_2_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. CLK_GATE_deleteme_unused_clock_3_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. CLK_GATE_deleteme_unused_clock_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. CLK_deleteme_unused_clock_0_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. CLK_deleteme_unused_clock_1_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. CLK_deleteme_unused_clock_2_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. CLK_deleteme_unused_clock_3_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. CLK_deleteme_unused_clock_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. RST_N_deleteme_unused_reset_0_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. RST_N_deleteme_unused_reset_1_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. RST_N_deleteme_unused_reset_2_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. RST_N_deleteme_unused_reset_3_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. RST_N_deleteme_unused_reset_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+Parsing XDC File [/home/ubuntu/connectal/constraints/xilinx/zedboard.xdc]
+Finished Parsing XDC File [/home/ubuntu/connectal/constraints/xilinx/zedboard.xdc]
+Parsing XDC File [/home/ubuntu/connectal/constraints/xilinx/zc7z020clg484.xdc]
+Finished Parsing XDC File [/home/ubuntu/connectal/constraints/xilinx/zc7z020clg484.xdc]
+Parsing XDC File [/home/ubuntu/Projects/leds/zedboard/.Xil/Vivado-12301-sena/dcp/mkZynqTop.xdc]
+WARNING: [Constraints 18-619] A clock with name 'clk_fpga_0' already exists, overwriting the previous clock with the same name. [/home/ubuntu/connectal/constraints/xilinx/zc7z020clg484.xdc:24]
+WARNING: [Constraints 18-619] A clock with name 'clk_fpga_1' already exists, overwriting the previous clock with the same name. [/home/ubuntu/connectal/constraints/xilinx/zc7z020clg484.xdc:27]
+WARNING: [Constraints 18-619] A clock with name 'clk_fpga_3' already exists, overwriting the previous clock with the same name. [/home/ubuntu/connectal/constraints/xilinx/zc7z020clg484.xdc:30]
+Finished Parsing XDC File [/home/ubuntu/Projects/leds/zedboard/.Xil/Vivado-12301-sena/dcp/mkZynqTop.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.31 . Memory (MB): peak = 1101.836 ; gain = 3.000 ; free physical = 12588 ; free virtual = 13961
+Restored from archive | CPU: 0.300000 secs | Memory: 0.013992 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.31 . Memory (MB): peak = 1101.836 ; gain = 3.000 ; free physical = 12588 ; free virtual = 13961
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 7 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 7 instances
+
+link_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1101.836 ; gain = 256.980 ; free physical = 12590 ; free virtual = 13960

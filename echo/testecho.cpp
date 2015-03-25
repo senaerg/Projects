@@ -34,9 +34,13 @@ public:
         sem_post(&sem);
     }
     virtual void heard2(uint16_t a, uint16_t b) {
-        printf("heard an echo2: %ld %ld\n", a, b);
+        printf("heard an echo2: %d %d\n", a, b);
         sem_post(&sem);
     }
+    virtual void heard3(uint16_t a, uint16_t b, uint16_t c){
+        printf("heard an echo3: %d %d %d\n",a,b,c);
+        sem_post(&sem);
+	}
     EchoIndication(unsigned int id) : EchoIndicationWrapper(id) {}
 };
 
@@ -44,6 +48,7 @@ int main(int argc, const char **argv)
 {
     EchoIndication *echoIndication = new EchoIndication(IfcNames_EchoIndicationH2S);
     EchoRequestProxy *echoRequestProxy = new EchoRequestProxy(IfcNames_EchoRequestS2H);
+//    SwallowProxy *swallowProxy = new SwallowProxy(IfcNames_Swallow);
 
     portalExec_start(); // start the "indication" thread
 
@@ -51,6 +56,8 @@ int main(int argc, const char **argv)
     echoRequestProxy->say(v);
     sem_wait(&sem);
     echoRequestProxy->say2(v, v);
+    sem_wait(&sem);
+    echoRequestProxy->say3(v,v,v);
     sem_wait(&sem);
     echoRequestProxy->setLeds(9);
     return 0;

@@ -1,0 +1,82 @@
+=== Generated schedule for mkLedControllerRequestOutputPipes ===
+
+Method schedule
+---------------
+Method: portalIfc_messageSize
+Ready signal: True
+Conflict-free: portalIfc_messageSize,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_deq,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       ifc_setLeds
+ 
+Method: portalIfc_indications_0_first
+Ready signal: setLeds_responseFifo_fifo.notEmpty &&
+	      setLeds_responseFifo_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_0_deq, ifc_setLeds
+ 
+Method: portalIfc_indications_0_deq
+Ready signal: setLeds_responseFifo_fifo.notEmpty &&
+	      ((! setLeds_responseFifo_count) ||
+	       setLeds_responseFifo_fifo.i_notEmpty)
+Conflict-free: portalIfc_messageSize
+Sequenced before: ifc_setLeds
+Sequenced after: portalIfc_indications_0_first,
+		 portalIfc_indications_0_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: portalIfc_indications_0_deq
+ 
+Method: portalIfc_indications_0_notEmpty
+Ready signal: True
+Conflict-free: portalIfc_messageSize,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_0_deq, ifc_setLeds
+ 
+Method: portalIfc_intr_status
+Ready signal: True
+Conflict-free: portalIfc_messageSize,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_0_deq, ifc_setLeds
+ 
+Method: portalIfc_intr_channel
+Ready signal: True
+Conflict-free: portalIfc_messageSize,
+	       portalIfc_indications_0_first,
+	       portalIfc_indications_0_notEmpty,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel
+Sequenced before: portalIfc_indications_0_deq, ifc_setLeds
+ 
+Method: ifc_setLeds
+Ready signal: setLeds_responseFifo_fifo.i_notFull
+Conflict-free: portalIfc_messageSize
+Sequenced after: portalIfc_indications_0_first,
+		 portalIfc_indications_0_deq,
+		 portalIfc_indications_0_notEmpty,
+		 portalIfc_intr_status,
+		 portalIfc_intr_channel
+Conflicts: ifc_setLeds
+ 
+Logical execution order: portalIfc_messageSize,
+			 portalIfc_indications_0_first,
+			 portalIfc_indications_0_notEmpty,
+			 portalIfc_intr_status,
+			 portalIfc_intr_channel,
+			 portalIfc_indications_0_deq,
+			 ifc_setLeds
+
+=================================================================

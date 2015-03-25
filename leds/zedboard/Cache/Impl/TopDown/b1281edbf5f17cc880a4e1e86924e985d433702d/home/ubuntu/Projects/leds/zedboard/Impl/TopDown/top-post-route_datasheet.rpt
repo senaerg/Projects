@@ -1,0 +1,62 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2014.4 (lin64) Build 1071353 Tue Nov 18 16:47:07 MST 2014
+| Date              : Wed Mar 25 12:54:27 2015
+| Host              : sena running 64-bit Ubuntu 14.04.2 LTS
+| Command           : report_datasheet -file ./Impl/TopDown/top-post-route_datasheet.rpt
+| Design            : mkZynqTop
+| Device            : 7z020-clg484
+| Speed File        : -1  PRODUCTION 1.11 2014-09-11
+| Temperature Grade : C
+-----------------------------------------------------------------------------------------
+
+Data Sheet Report
+
+Propagation delays to output ports w.r.t clocks
+
+-----------+--------------+----------------+---------+----------------+---------+----------+
+Reference  | Output       | Max Clk (Edge) | Process | Min Clk (Edge) | Process | Internal | 
+Clock      | Port         |        to port | Corner  |        to port | Corner  | Clock    | 
+-----------+--------------+----------------+---------+----------------+---------+----------+
+clk_fpga_0 | GPIO_leds[0] |     11.819 (r) | SLOW    |      3.945 (r) | FAST    |          |
+clk_fpga_0 | GPIO_leds[1] |     11.744 (r) | SLOW    |      3.914 (r) | FAST    |          |
+clk_fpga_0 | GPIO_leds[2] |     11.636 (r) | SLOW    |      3.880 (r) | FAST    |          |
+clk_fpga_0 | GPIO_leds[3] |     11.779 (r) | SLOW    |      3.924 (r) | FAST    |          |
+clk_fpga_0 | GPIO_leds[4] |     11.811 (r) | SLOW    |      3.957 (r) | FAST    |          |
+clk_fpga_0 | GPIO_leds[5] |     11.784 (r) | SLOW    |      3.940 (r) | FAST    |          |
+clk_fpga_0 | GPIO_leds[6] |     11.728 (r) | SLOW    |      3.914 (r) | FAST    |          |
+clk_fpga_0 | GPIO_leds[7] |     13.081 (r) | SLOW    |      4.519 (r) | FAST    |          |
+-----------+--------------+----------------+---------+----------------+---------+----------+
+
+
+Setups between clocks
+
+-----------+-------------+-----------+---------+-----------+---------+-----------+---------+-----------+---------+
+Source     | Destination |  Src:Rise | Process |  Src:Rise | Process |  Src:Fall | Process |  Src:Fall | Process | 
+Clock      | Clock       | Dest:Rise | Corner  | Dest:Fall | Corner  | Dest:Rise | Corner  | Dest:Fall | Corner  | 
+-----------+-------------+-----------+---------+-----------+---------+-----------+---------+-----------+---------+
+clk_fpga_0 | clk_fpga_0  |     6.085 | SLOW    |           |         |           |         |           |         | 
+-----------+-------------+-----------+---------+-----------+---------+-----------+---------+-----------+---------+
+
+
+Max / Min delays for output bus
+Clocked by: clk_fpga_0
+Bus Skew: 1.446 ns
+-------------------+--------------+---------+-------------+---------+--------+
+                   |          Max | Process |         Min | Process |   Edge | 
+Pad                |        Delay | Corner  |       Delay | Corner  |   Skew | 
+-------------------+--------------+---------+-------------+---------+--------+
+GPIO_leds[0]       |   11.819 (r) | SLOW    |   3.945 (r) | FAST    |  0.183 |
+GPIO_leds[1]       |   11.744 (r) | SLOW    |   3.914 (r) | FAST    |  0.108 |
+GPIO_leds[2]       |   11.636 (r) | SLOW    |   3.880 (r) | FAST    |  0.000 |
+GPIO_leds[3]       |   11.779 (r) | SLOW    |   3.924 (r) | FAST    |  0.143 |
+GPIO_leds[4]       |   11.811 (r) | SLOW    |   3.957 (r) | FAST    |  0.175 |
+GPIO_leds[5]       |   11.784 (r) | SLOW    |   3.940 (r) | FAST    |  0.149 |
+GPIO_leds[6]       |   11.728 (r) | SLOW    |   3.914 (r) | FAST    |  0.092 |
+GPIO_leds[7]       |   13.081 (r) | SLOW    |   4.519 (r) | FAST    |  1.446 |
+-------------------+--------------+---------+-------------+---------+--------+
+Worst Case Summary |   13.081 (r) | SLOW    |   3.880 (r) | FAST    |  1.446 |
+-------------------+--------------+---------+-------------+---------+--------+
+
+
+
